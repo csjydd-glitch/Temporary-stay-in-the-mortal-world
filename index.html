@@ -1,0 +1,129 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta
+      name="description"
+      content="一座宁静、内省的个人视频作品集。"
+    />
+    <title>影像作品集 | 墨夜观照</title>
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <div class="paper-grain" aria-hidden="true"></div>
+    <header class="masthead">
+      <nav class="site-nav" aria-label="作品集导航">
+        <a class="seal" href="#works" aria-label="回到作品区">映</a>
+        <a class="nav-link" href="#works">作品</a>
+      </nav>
+
+      <section class="intro" aria-labelledby="page-title">
+        <p class="eyebrow">Quiet cinema / inner cosmos</p>
+        <h1 id="page-title">影像作品集</h1>
+        <p class="lead">
+          在故事的暗处辨认情绪，在镜头的留白里听见人物。
+        </p>
+      </section>
+    </header>
+
+    <main>
+      <section class="works-shell" id="works" aria-labelledby="works-title">
+        <div class="section-head">
+          <h2 id="works-title">所剪之境</h2>
+          <p id="work-count">作品正在显影</p>
+        </div>
+        <div class="works-grid" id="works-grid" aria-live="polite"></div>
+        <p class="data-note" id="data-note" hidden></p>
+      </section>
+
+      <section class="about-section" aria-labelledby="about-title">
+        <h2 id="about-title">关于我</h2>
+        <p>我叫陈世佳。</p>
+        <p>一个INFJ，喜欢玄学、中医、心理学，也离不开宠物和音乐。</p>
+        <p>
+          我做综艺剪辑、混剪、Vlog、纪录片、访谈——搞笑、情感、故事、混剪，我都想试试。
+        </p>
+        <p class="about-belief">
+          信念很简单：<strong>每一个视频，哪怕是上班，也想让主人公的价值体现出来。</strong>
+        </p>
+        <p>我相信镜头不是冷眼旁观，而是轻轻捧起一个人的光。</p>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <p class="footer-quote" id="footer-quote">
+        知止而后有定，定而后能静。
+      </p>
+    </footer>
+
+    <button
+      class="mode-toggle"
+      id="mode-toggle"
+      type="button"
+      aria-pressed="false"
+      aria-label="切换夜览模式"
+      title="切换夜览模式"
+    >
+      ☯
+    </button>
+
+    <button
+      class="oracle-toggle"
+      id="oracle-toggle"
+      type="button"
+      aria-controls="oracle-panel"
+      aria-expanded="false"
+      aria-label="打开今日卦象"
+      title="今日卦象"
+    >
+      <span aria-hidden="true">卦</span>
+    </button>
+
+    <aside
+      class="oracle-panel"
+      id="oracle-panel"
+      role="dialog"
+      aria-modal="false"
+      aria-hidden="true"
+      aria-labelledby="oracle-title"
+    >
+      <button
+        class="oracle-close"
+        id="oracle-close"
+        type="button"
+        aria-label="关闭今日卦象"
+      >
+        ×
+      </button>
+      <p class="eyebrow">今日卦象</p>
+      <div class="hexagram" id="hexagram" aria-hidden="true"></div>
+      <h2 id="oracle-title"></h2>
+      <p id="oracle-message"></p>
+      <button class="oracle-again" id="oracle-again" type="button">
+        再卜一卦
+      </button>
+    </aside>
+
+    <template id="work-template">
+      <article class="work-card">
+        <a class="work-link" rel="noreferrer">
+          <div class="work-visual">
+            <img class="work-image" alt="" hidden />
+            <video class="work-preview" muted loop playsinline preload="metadata"></video>
+            <div class="work-sigil" aria-hidden="true"></div>
+            <span class="watch-mark">观</span>
+          </div>
+          <div class="work-copy">
+            <div class="work-meta"></div>
+            <h3></h3>
+            <p class="work-description"></p>
+            <p class="work-story"></p>
+          </div>
+        </a>
+      </article>
+    </template>
+
+    <script src="./app.js"></script>
+  </body>
+</html>
